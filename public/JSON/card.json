@@ -1,0 +1,25 @@
+{
+    "cards": [
+        {
+            "name": "Lego",
+            "img": "../img/Red_Brick_4x2.jpg",
+            "description": "a very long text for testing"
+        },
+        {
+            "name": "Lego",
+            "img": "../img/Red_Brick_4x2.jpg",
+            "description": "a very long text for testing"
+        },
+        {
+            "name": "Lego",
+            "img": "../img/Red_Brick_4x2.jpg",
+            "description": "a very long text for testing"
+        },
+        {
+            "name": "Lego",
+            "img": "../img/Red_Brick_4x2.jpg",
+            "description": "a very long text for testing"
+        }
+        
+    ]
+}

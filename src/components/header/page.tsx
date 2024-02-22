@@ -28,7 +28,7 @@ const page = () => {
         </li>
 
         <li>
-          <Link className={style.link} href="/Enviroment/page">
+          <Link className={style.link} href="/enviroment">
             Build
           </Link>
         </li>
