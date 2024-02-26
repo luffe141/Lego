@@ -1,4 +1,5 @@
-.carContainer{
+.cardContainer{
+    display: flex;
     
 }
 
@@ -7,5 +8,14 @@
 
 }
 .cardImg{
-    width: 25%;
+    width: 35%;
+    display: block;
+    margin: 0 auto;
+
+}
+.cardH2{
+    text-align: center;
+}
+.cardP{
+    text-align: center;
 }

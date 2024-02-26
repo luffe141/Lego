@@ -5,16 +5,16 @@ import * as THREE from 'three';
 import Header from "../../components/header/page"
 import style from "./page.module.css"
 
-const page = () => {
-  
-    const canvasRef = useRef(null);
+
+const page = (): JSX.Element => {
+    const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
+        const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current! });
 
-        renderer.setSize(window.innerWidth-100, window.innerHeight-100);
+        renderer.setSize(window.innerWidth - 100, window.innerHeight - 100);
         camera.position.z = 5;
 
         const geometry = new THREE.BoxGeometry();
@@ -40,11 +40,10 @@ const page = () => {
     }, []);
 
     return (
-      <>
-      <Header/>
-      <canvas className={style.canvas} ref={canvasRef}></canvas>
-      </>
-        
+        <>
+            <Header />
+            <canvas className={style.canvas} ref={canvasRef} />
+        </>
     );
 };
 
