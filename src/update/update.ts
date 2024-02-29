@@ -1,18 +1,18 @@
-// import fetch from 'node-fetch';
+
 import { Database } from 'sqlite3';
 
 // Define types
 type Brick = {
   size: string;
   shape: string;
-  color: string;
+  color?: string;
 };
 
 interface LegoColorResponse {
-  results: {
-    external_ids: {
-      BrickOwl: {
-        ext_descrs: string[];
+  results?: {
+    external_ids?: {
+      BrickOwl?: {
+        ext_descrs?: string[][];
       };
     };
   }[];
@@ -27,15 +27,23 @@ async function fetchData(): Promise<Brick[]> {
     }
   });
 
-  const data: LegoColorResponse = await response.json() as LegoColorResponse;
-  const colors = data.results.map(result => result.external_ids.BrickOwl.ext_descrs[0]);
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
 
-  const bricks: Brick[] = colors.map(color => ({
+  const data: unknown = await response.json();
+  const responseData = data as LegoColorResponse;
+
+  // Check if 'results' is defined before accessing it
+  const colors = responseData.results?.map(result => result.external_ids?.BrickOwl?.ext_descrs?.[0] ?? []);
+
+  // Handle the case where 'colors' might be undefined
+  const bricks: Brick[] = colors?.map(colorArray => ({
     size: 'default',
     shape: 'default',
-    color: color
-  }));
-
+    color: colorArray[0] ?? 'default'
+  })) ?? [];
+  
   return bricks;
 }
 
