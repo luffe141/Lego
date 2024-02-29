@@ -1,12 +1,12 @@
 import express, { Request, Response } from 'express';
-import { AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const app = express();
 
 app.post('/post', (req: Request, res: Response) => {
   const config: AxiosRequestConfig = {
     method: 'post',
-    url: 'http://jsonplaceholder.typicode.com/posts',
+    url: 'https://rebrickable.com/api/v3/lego/colors/',
     data: req.body,
   };
 
