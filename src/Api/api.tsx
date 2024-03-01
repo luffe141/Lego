@@ -22,7 +22,7 @@ app.post('/post', (req: Request, res: Response) => {
 app.put('/put', (req: Request, res: Response) => {
   const config: AxiosRequestConfig = {
     method: 'put',
-    url: 'http://jsonplaceholder.typicode.com/posts/1',
+    url: 'ttps://rebrickable.com/api/v3/lego/colors/',
     data: req.body,
   };
 
@@ -38,7 +38,7 @@ app.put('/put', (req: Request, res: Response) => {
 app.patch('/patch', (req: Request, res: Response) => {
   const config: AxiosRequestConfig = {
     method: 'patch',
-    url: 'http://jsonplaceholder.typicode.com/posts/1',
+    url: 'https://rebrickable.com/api/v3/lego/colors/',
     data: req.body,
   };
 
@@ -54,7 +54,7 @@ app.patch('/patch', (req: Request, res: Response) => {
 app.delete('/delete', (req: Request, res: Response) => {
   const config: AxiosRequestConfig = {
     method: 'delete',
-    url: 'http://jsonplaceholder.typicode.com/posts/1',
+    url: 'https://rebrickable.com/api/v3/lego/colors/',
   };
 
   axios(config)
@@ -69,7 +69,7 @@ app.delete('/delete', (req: Request, res: Response) => {
 app.get('/get', (req: Request, res: Response) => {
   const config: AxiosRequestConfig = {
     method: 'get',
-    url: 'http://jsonplaceholder.typicode.com/posts',
+    url: 'ttps://rebrickable.com/api/v3/lego/colors/',
   };
 
   axios(config)
